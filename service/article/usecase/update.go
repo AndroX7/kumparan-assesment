@@ -1,11 +1,13 @@
 package usecase
 
 import (
-	"log"
-
+	"encoding/json"
 	"github.com/AndroX7/kumparan-assesment/models"
 	"github.com/AndroX7/kumparan-assesment/service/article/delivery/http/request"
 	"github.com/AndroX7/kumparan-assesment/utils/helpers"
+	"log"
+	"strconv"
+	"time"
 
 	"github.com/jinzhu/copier"
 )
@@ -34,5 +36,12 @@ func (u *Usecase) Update(request request.ArticleUpdateRequest, articleID uint64)
 		return nil, err
 	}
 
+	b, _ := json.Marshal(articleM)
+	prefix := strconv.FormatUint(articleM.ID, 10)
+
+	err = u.redis.Set(prefix, "-", string(b), 10*time.Minute)
+	if err != nil {
+		log.Println("err-set-cache-on-redis: ", err)
+	}
 	return articleM, err
 }

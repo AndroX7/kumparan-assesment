@@ -9,12 +9,12 @@ import (
 	"gorm.io/gorm"
 )
 
-func (r *Repository) Update(artist *models.Articles, tx *gorm.DB) error {
+func (r *Repository) Update(article *models.Articles, tx *gorm.DB) error {
 	var db = r.db
 	if tx != nil {
 		db = tx
 	}
-	err := db.Save(artist).Error
+	err := db.Save(article).Error
 	if err != nil {
 		log.Println("error-update-artist:", err)
 		return errors.ErrUnprocessableEntity

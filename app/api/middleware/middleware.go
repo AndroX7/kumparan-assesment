@@ -1,16 +1,17 @@
 package middleware
 
 import (
-	"github.com/AndroX7/kumparan-assesment/lib/redis"
 	"log"
 	"time"
+
+	"github.com/AndroX7/kumparan-assesment/lib/redis"
 
 	jwt "github.com/appleboy/gin-jwt/v2"
 )
 
 const RedisResponseDefaultKeyExpirationTime = 10 * time.Minute
-const RedisResponseArtistSet = "artists"
-const RedisResponsePrefix = "response:gaming-company-test:"
+const RedisResponseArtistSet = "article"
+const RedisResponsePrefix = "response:article:"
 
 type Config struct {
 	// put middleware config here

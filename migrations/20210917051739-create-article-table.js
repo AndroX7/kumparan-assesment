@@ -9,26 +9,34 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true
       },
-      author:{
+      title:{
           type: Sequelize.STRING,
           allowNull: true,
       },
-      author_id:{
-        type: Sequelize.BIGINT,
+      author:{
+        type: Sequelize.STRING,
         allowNull: true,
     },
-      title:{
+      genre:{
         type: Sequelize.STRING,
         allowNull: true,
       },
-      body: {
+      image_url: {
         type: Sequelize.TEXT,
         allowNull: true
       },
       created: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.DATE,
         allowNull: true
-      }, 
+      },
+      price: {
+        type: Sequelize.DECIMAL(10,2),
+        allowNull: false
+      },
+      body:{
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false

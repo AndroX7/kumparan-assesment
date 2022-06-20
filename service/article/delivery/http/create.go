@@ -1,6 +1,7 @@
 package http
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/AndroX7/kumparan-assesment/service/article/delivery/http/request"
@@ -12,6 +13,7 @@ func (h *Handler) Create(c *gin.Context) {
 	var request request.ArticleCreateRequest
 
 	if err := c.ShouldBind(&request); err != nil {
+		log.Println("error-on-create-new-article: ", err)
 		_ = c.Error(err).SetType(gin.ErrorTypeBind)
 		return
 	}

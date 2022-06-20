@@ -21,7 +21,7 @@ func (u *Usecase) Index(paginationConfig request_util.PaginationConfig, c *gin.C
 
 	if search, ok := c.Request.URL.Query()["search"]; ok {
 		paginationConfig.AddScope(func(db *gorm.DB) *gorm.DB {
-			return db.Where("AND name like ? OR code like ? ", fmt.Sprint("%", search[0], "%"), fmt.Sprint("%", search[0], "%"))
+			return db.Where("AND title like ? OR author like ? ", fmt.Sprint("%", search[0], "%"), fmt.Sprint("%", search[0], "%"))
 		})
 	}
 
