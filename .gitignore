@@ -1,0 +1,9 @@
+.env
+vendor/
+node_modules/
+.idea/
+cp.out
+package-lock.json
+bin/
+yarn.lock
+error-log.log
