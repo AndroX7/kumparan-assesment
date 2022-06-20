@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "22008797-6cff-4408-8d40-1931098cf165",
+		"name": "Article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17824258"
+	},
+	"item": [
+		{
+			"name": "Get Article",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/article?title=Lorem&author=rowling",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"article"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Lorem"
+						},
+						{
+							"key": "author",
+							"value": "rowling"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Article",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Loremzo 1\",\r\n    \"genre\": \"horror\",\r\n    \"image_url\": \"https://somewhere-else.com\",\r\n    \"created\": \"2006-01-02\",\r\n    \"price\": 50000,\r\n    \"body\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\r\n    \"author\": \"J K Rowling\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Loremzo 1\",\r\n    \"genre\": \"horror\",\r\n    \"image_url\": \"https://somewhere-else.com\",\r\n    \"created\": \"2006-01-02\",\r\n    \"price\": 50000,\r\n    \"body\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\r\n    \"author\": \"J K Rowling\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/article",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Article",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article By Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
